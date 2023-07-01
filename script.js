@@ -13,9 +13,6 @@ let button = (document.getElementById("Button").onclick = function () {
 //------------------------------STOPWATCH------------------
 
 let Interval;
-let h,
-  m,
-  s = 0;
 
 let hours = document.getElementById("hours");
 let mins = document.getElementById("tens");
@@ -35,8 +32,7 @@ document.getElementById("Start").onclick = function () {
       if (mins.innerHTML < 10) {
         mins.innerHTML = "0" + mins.innerHTML;
       }
-    } 
-     else if (mins.innerHTML === "60") {
+    } else if (mins.innerHTML === "60") {
       mins.innerHTML = "00";
       hours.innerHTML++;
       if (hours.innerHTML < 10) {
