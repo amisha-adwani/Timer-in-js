@@ -60,7 +60,7 @@ document.getElementById("Start2").onclick = function () {
     let TimerMin = document.getElementById("TimerMin");
     let TimerSec = document.getElementById("TimerSec");
     TimerSec.value--;
-if (TimerSec.value <= 0) {
+if (TimerSec.value < 0) {
   TimerSec.value = 59;
   TimerMin.value--;
 
@@ -80,9 +80,7 @@ if (TimerHour.value == 0 && TimerMin.value == 0) {
 }
 
 if (TimerHour.value == 0 && TimerMin.value == 0 && TimerSec.value == 0) {
-  TimerHour.value = 0;
-  TimerMin.value = 0;
-  TimerSec.value = 0;
+  clearInterval(Interval2);
 }
   }
      
