@@ -59,35 +59,33 @@ document.getElementById("Start2").onclick = function () {
     let TimerHour = document.getElementById("TimerHour");
     let TimerMin = document.getElementById("TimerMin");
     let TimerSec = document.getElementById("TimerSec");
-  
-    if (TimerSec.value < 60) {
-      TimerSec.value--;
-    }
-    if (TimerSec.value == 0) {
-      TimerSec.value = 59;
-      TimerMin.value--;
-    }
-    if (TimerMin.value == 0) {
-      TimerMin.value = 59;
-      TimerHour.value--;
-    }
-    if(TimerHour.value == 0){
-      TimerHour.value=0
-    }
-  
-    if(TimerHour.value ==0){
-      TimerHour.value = 0
-    }
-    if(TimerHour.value == 0 && TimerMin.value ==0){
-      TimerHour.value=0
-      TimerMin.value=0
-    }
-    if(TimerHour.value ==0 && TimerMin.value == 0 && TimerSec.value == 0){
-      TimerHour.value=0
-      TimerMin.value=0
-      TimerSec.value=0
+    TimerSec.value--;
+if (TimerSec.value <= 0) {
+  TimerSec.value = 59;
+  TimerMin.value--;
+
+  if (TimerMin.value < 0) {
+    TimerMin.value = 59;
+    TimerHour.value--;
+
+    if (TimerHour.value < 0) {
+      TimerHour.value = 0;
     }
   }
+}
+
+if (TimerHour.value == 0 && TimerMin.value == 0) {
+  TimerHour.value = 0;
+  TimerMin.value = 0;
+}
+
+if (TimerHour.value == 0 && TimerMin.value == 0 && TimerSec.value == 0) {
+  TimerHour.value = 0;
+  TimerMin.value = 0;
+  TimerSec.value = 0;
+}
+  }
+     
 };
 
 document.getElementById("Stop2").onclick = function () {
